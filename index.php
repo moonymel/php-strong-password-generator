@@ -4,8 +4,9 @@
 
         $lower_char = 'abcdefghijklmnopqrstuvwxyz';
         $upper_char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $num_char = '0123456789';
         $spec_char = '.-@,;:*';
-        $all_char = $lower_char.$upper_char.$spec_char;
+        $all_char = $lower_char.$upper_char.$num_char.$spec_char;
 
         $password = '';
 
@@ -20,7 +21,6 @@
 
         $psw_len = (int)$_GET['psw_len'];
         $new_pass = createPassword($psw_len);
-        var_dump($new_pass);
 
     }
 
@@ -49,6 +49,9 @@
                     <button type="submit" class="btn btn-success">Invia</button>
                 </div>
         </form>
+        <div class="my-3">           
+            <?php echo isset($_GET['psw_len']) ? 'La tua password generata: '.$new_pass : ' ' ?>
+        </div>
     </div>
 
 </body>
